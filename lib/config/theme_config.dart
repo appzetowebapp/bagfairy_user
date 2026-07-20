@@ -38,6 +38,11 @@ class ThemeConfig {
         borderRadius: BorderRadius.circular(AppConfig.borderRadius),
       ),
     ),
+    snackBarTheme: const SnackBarThemeData(
+      backgroundColor: Colors.white,
+      contentTextStyle: TextStyle(color: Colors.black87),
+      actionTextColor: AppConfig.primaryColor,
+    ),
   );
 
   // ==================== DARK THEME ====================
@@ -75,6 +80,11 @@ class ThemeConfig {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(AppConfig.borderRadius),
       ),
+    ),
+    snackBarTheme: const SnackBarThemeData(
+      backgroundColor: Colors.white,
+      contentTextStyle: TextStyle(color: Colors.black87),
+      actionTextColor: AppConfig.primaryColor,
     ),
   );
 }
