@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "513826447526",
+    "project_id": "bagferi",
+    "storage_bucket": "bagferi.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513826447526:android:752edda0b75436a74cd467",
+        "android_client_info": {
+          "package_name": "com.bagferi.user"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACv8rjG4cm2TsNsxwS7oTrQyrK9AnQxsw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
