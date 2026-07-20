@@ -80,17 +80,17 @@ class _WebViewScreenState extends State<WebViewScreen> {
               SnackBar(
                 content: Row(
                   children: const [
-                    Icon(Icons.wifi_off, color: Colors.white),
+                    Icon(Icons.wifi_off, color: Colors.black),
                     SizedBox(width: 12),
                     Expanded(
                       child: Text(
                         "No internet connection. Please check your internet and try again.",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.black),
                       ),
                     ),
                   ],
                 ),
-                backgroundColor: const Color(0xFF8E4692),
+                backgroundColor: Colors.white,
                 duration: const Duration(seconds: 4),
                 behavior: SnackBarBehavior.floating,
                 shape: RoundedRectangleBorder(
@@ -574,7 +574,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
             children: [
               Row(
                 children: [
-                  const Icon(Icons.check_circle, color: Colors.white),
+                  const Icon(Icons.check_circle, color: Colors.black),
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
@@ -582,7 +582,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
                           ? 'Receipt saved to Downloads'
                           : 'File saved to Downloads',
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -593,7 +593,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
               Text(
                 filename,
                 style: const TextStyle(
-                  color: Colors.white70,
+                  color: Colors.black54,
                   fontSize: 12,
                 ),
                 maxLines: 1,
@@ -601,12 +601,12 @@ class _WebViewScreenState extends State<WebViewScreen> {
               ),
             ],
           ),
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.white,
           duration: const Duration(seconds: 4),
           behavior: SnackBarBehavior.floating,
           action: SnackBarAction(
             label: 'OPEN',
-            textColor: Colors.white,
+            textColor: AppConfig.primaryColor,
             onPressed: () async {
               await downloadService.openFile(filePath);
             },
@@ -619,8 +619,8 @@ class _WebViewScreenState extends State<WebViewScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Download failed: $e'),
-            backgroundColor: Colors.red,
+            content: Text('Download failed: $e', style: const TextStyle(color: Colors.black)),
+            backgroundColor: Colors.white,
             duration: const Duration(seconds: 3),
           ),
         );
@@ -1413,7 +1413,8 @@ class _WebViewScreenState extends State<WebViewScreen> {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
                     content:
-                        Text('Could not open payment app. Is it installed?')),
+                        Text('Could not open payment app. Is it installed?', style: TextStyle(color: Colors.black)),
+                    backgroundColor: Colors.white),
               );
             }
           }
@@ -1471,7 +1472,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
         debugPrint('⚠️ No fallback URL found in intent');
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Could not open map application.')),
+            const SnackBar(content: Text('Could not open map application.', style: TextStyle(color: Colors.black)), backgroundColor: Colors.white),
           );
         }
       }
@@ -1497,8 +1498,8 @@ class _WebViewScreenState extends State<WebViewScreen> {
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('Cannot open: ${uri.scheme}://...'),
-                backgroundColor: Colors.orange,
+                content: Text('Cannot open: ${uri.scheme}://...', style: const TextStyle(color: Colors.black)),
+                backgroundColor: Colors.white,
                 duration: const Duration(seconds: 2),
               ),
             );
@@ -2827,8 +2828,8 @@ class _WebViewScreenState extends State<WebViewScreen> {
                                             .showSnackBar(
                                           const SnackBar(
                                             content: Text(
-                                                'Cannot download file. Please check storage permissions in app settings.'),
-                                            backgroundColor: Colors.orange,
+                                                'Cannot download file. Please check storage permissions in app settings.', style: TextStyle(color: Colors.black)),
+                                            backgroundColor: Colors.white,
                                             duration: Duration(seconds: 3),
                                           ),
                                         );
@@ -2851,7 +2852,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
                                                   strokeWidth: 2,
                                                   valueColor:
                                                       AlwaysStoppedAnimation<
-                                                          Color>(Colors.white),
+                                                          Color>(Colors.black),
                                                 ),
                                               ),
                                               const SizedBox(width: 12),
@@ -2861,12 +2862,12 @@ class _WebViewScreenState extends State<WebViewScreen> {
                                                       ? 'Downloading receipt...'
                                                       : 'Downloading file...',
                                                   style: const TextStyle(
-                                                      color: Colors.white),
+                                                      color: Colors.black, fontWeight: FontWeight.bold),
                                                 ),
                                               ),
                                             ],
                                           ),
-                                          backgroundColor: Colors.blue,
+                                          backgroundColor: Colors.white,
                                           duration: const Duration(seconds: 2),
                                         ),
                                       );
@@ -2962,7 +2963,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
                                               Row(
                                                 children: [
                                                   const Icon(Icons.check_circle,
-                                                      color: Colors.white),
+                                                      color: Colors.black),
                                                   const SizedBox(width: 8),
                                                   Expanded(
                                                     child: Text(
@@ -2970,7 +2971,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
                                                           ? 'Receipt saved to Downloads'
                                                           : 'File saved to Downloads',
                                                       style: const TextStyle(
-                                                        color: Colors.white,
+                                                        color: Colors.black,
                                                         fontWeight:
                                                             FontWeight.bold,
                                                       ),
@@ -2983,7 +2984,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
                                                 Text(
                                                   result.filename!,
                                                   style: const TextStyle(
-                                                    color: Colors.white70,
+                                                    color: Colors.black54,
                                                     fontSize: 12,
                                                   ),
                                                   maxLines: 1,
@@ -2993,12 +2994,12 @@ class _WebViewScreenState extends State<WebViewScreen> {
                                               ],
                                             ],
                                           ),
-                                          backgroundColor: Colors.green,
+                                          backgroundColor: Colors.white,
                                           duration: const Duration(seconds: 4),
                                           behavior: SnackBarBehavior.floating,
                                           action: SnackBarAction(
                                             label: 'OPEN',
-                                            textColor: Colors.white,
+                                            textColor: AppConfig.primaryColor,
                                             onPressed: () async {
                                               if (result.filePath != null) {
                                                 await downloadService
@@ -3018,9 +3019,9 @@ class _WebViewScreenState extends State<WebViewScreen> {
                                           content: Text(
                                             result.error ?? 'Download failed',
                                             style: const TextStyle(
-                                                color: Colors.white),
+                                                color: Colors.black),
                                           ),
-                                          backgroundColor: Colors.red,
+                                          backgroundColor: Colors.white,
                                           duration: const Duration(seconds: 3),
                                         ),
                                       );
@@ -3033,8 +3034,8 @@ class _WebViewScreenState extends State<WebViewScreen> {
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(
                                         SnackBar(
-                                          content: Text('Download failed: $e'),
-                                          backgroundColor: Colors.red,
+                                          content: Text('Download failed: $e', style: const TextStyle(color: Colors.black)),
+                                          backgroundColor: Colors.white,
                                           duration: const Duration(seconds: 3),
                                         ),
                                       );
@@ -3163,17 +3164,17 @@ class _WebViewScreenState extends State<WebViewScreen> {
       SnackBar(
         content: Row(
           children: const [
-            Icon(Icons.wifi_off, color: Colors.white),
+            Icon(Icons.wifi_off, color: Colors.black),
             SizedBox(width: 12),
             Expanded(
               child: Text(
                 "No internet connection. Please check your internet and try again.",
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.black),
               ),
             ),
           ],
         ),
-        backgroundColor: const Color(0xFF8E4692),
+        backgroundColor: Colors.white,
         duration: const Duration(seconds: 4),
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
